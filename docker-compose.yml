@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  node-base-app:
+    container_name: node-base-app
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: node-base-app
+    volumes:
+      - './app/:/app'
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
